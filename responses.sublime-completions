@@ -1,0 +1,140 @@
+{
+    "scope": "",
+    "comment": "Theme Review Responses.",
+    "completions": [
+        {
+            "trigger": "Two Theme Diff \t TRT",
+            "contents": "https://themes.trac.wordpress.org/changeset?old_path=${1:bhari/1.0.4}&new_path=${:2astra/1.0.4}"
+        },
+        {
+            "trigger": "Theme URL/URI \t TRT",
+            "contents": "- REQUIRED: Theme URL is invalid. @see [https://make.wordpress.org/themes/handbook/review/required/#selling-credits-and-links Selling Credits and Links]."
+        },{
+            "trigger": "Existing Feature \t TRT",
+            "contents": "- REQUIRED: WordPress Features First - Use WordPress functionality and features first, if available. [https://make.wordpress.org/themes/handbook/review/required/#core-functionality-and-features Core Functionality and Features]. Eg, use the_archive_title() to display archive title in archive templates. Use the_posts_pagination() for numeric pagination in archives."
+        },{
+            "trigger": "Menu Parameter \t TRT",
+            "contents": "- REQUIRED: There should not be menu parameter in `wp_nav_menu()` call. Use `theme_location` parameter."
+        },{
+            "trigger": "Plugin Recommended Not Required  \t TRT",
+            "contents": "- REQUIRED: Plugins should be recommended in theme but it is not allowed to make it required."
+        },{
+            "trigger": "Plugin Recommended (Only ORG)  \t TRT",
+            "contents": "- REQUIRED: Only plugins from WordPress Plugin Directory are allowed to be recommended."
+        },{
+            "trigger": "get_permalink() escaping   \t TRT",
+            "contents": "- REQUIRED: Escape get_permalink() with esc_url()."
+        },{
+            "trigger": "Duplicate Theme \t TRT",
+            "contents": "Hi ${1:AUTHOR NAME},\n\nClosing ticket. Because This is the exact copy of existing theme [${2:URL} ${3:THEME NAME}].\n\n-----\n\n1) If you want to create a new theme then you can use the [https://github.com/Automattic/_s _s] theme.\nOr\n2) You can extend the [${2:URL} ${3:THEME NAME}] theme though [https://make.wordpress.org/training/handbook/theme-school/child-themes/ creating child theme].\n"
+        },{
+            "trigger": "Prefixing \t TRT",
+            "contents": "- REQUIRED: Provide a unique prefix for everything (options, functions, global variables, constants, post meta, etc.) @see [http://themereview.co/prefix-all-the-things/ Prefix all the Things.]"
+        },{
+            "trigger": "Licensing \t TRT",
+            "contents": "- REQUIRED: Update theme readme file to keep credits and license info of all third party resources (like scripts, styles, libraries, images, etc).[https://make.wordpress.org/themes/2015/04/29/a-revised-readme/ Sample Format]."
+        },{
+            "trigger": "Widget Title \t TRT",
+            "contents": "- REQUIRED: Widget title should be passed through widget_title filter with parameters instance and id base. Ref: [https://core.trac.wordpress.org/browser/trunk/src/wp-includes/widgets/class-wp-widget-text.php#L68 class-wp-widget-text.php#L68]"
+        },{
+            "trigger": "Title Tag \t TRT",
+            "contents": "- REQUIRED: The title tag must not be used. Use add_theme_support( 'title-tag' ) instead."
+        },{
+            "trigger": "Commented Code \t TRT",
+            "contents": "- REQUIRED: Remove commented and unused code."
+        },{
+            "trigger": "Hard-coded/Hotlink Scripts \t TRT",
+            "contents": "- REQUIRED: Do not include scripts/styles hard-coded use [https://developer.wordpress.org/reference/functions/wp_enqueue_scripts/ wp_enqueue_scripts()]. The exception to this is Google Fonts."
+        },{
+            "trigger": "Date Translation \t TRT",
+            "contents": "- REQUIRED: Change date('Y') to date_i18n(__('Y','textdomain'))."
+        },{
+            "trigger": "Editor File \t TRT",
+            "contents": "- REQUIRED: Please implement add_editor_style() properly. [https://developer.wordpress.org/reference/functions/add_editor_style/ add_editor_style()]. If you don't want to implement, Please remove it."
+        },{
+            "trigger": "Theme Tags \t TRT",
+            "contents": "REQUIRED: style.css - At least one relevant subject tag is required (Max 3 subject tags allowed). @see [https://make.wordpress.org/themes/handbook/review/required/theme-tags/ Theme Tags.]"
+        },{
+            "trigger": "External/Third Party Script Prefixing \t TRT",
+            "contents": "RECOMMENDED: Third party script and style handle should not be prefixed. See [https://make.wordpress.org/themes/handbook/review/recommended/#stylesheets-and-scripts Stylesheets and Scripts]"
+        },{
+            "trigger": "Escaping \t TRT",
+            "contents": "- REQUIRED: All untrusted data should be escaped properly before displaying. [https://codex.wordpress.org/Data_Validation Data Validation]. Eg, esc_url() should be used to escape URL, value in HTML attributes should be escaped with esc_attr()."
+        },{
+            "trigger": "Search Form Custom \t TRT",
+            "contents": "- REQUIRED: Remove `search-form` from `add_theme_support( 'html5' )` as you are customizing it yourself."
+        },{
+            "trigger": "Search Form Search Field \t TRT",
+            "contents": "- REQUIRED: searchform.php - Keep `value='<?php the_search_query(); ?>'` for search text field."
+        },{
+            "trigger": "Existing Scripts \t TRT",
+            "contents": "- REQUIRED: Masonry library is already available in core. Please remove it from theme and use that instead. See [https://developer.wordpress.org/reference/functions/wp_enqueue_script/ wp_enqueue_script()]."
+        },{
+            "trigger": "Minification \t TRT",
+            "contents": "- REQUIRED: No minified files unless unminified version is also provided. Eg, If you are using bootstrap.min.css then you should also keep bootstrap.css."
+        },{
+            "trigger": "Custom Logo \t TRT",
+            "contents": "- REQUIRED: Use Custom Logo for logo feature."
+        },
+
+        // Customizer.
+        {
+            "trigger": "Customizer Remove Section \t TRT",
+            "contents": "- REQUIRED: Removing core settings is not allowed. E.g `$wp_customize->remove_section( 'colors' );`."
+        },{
+            "trigger": "Customizer Sanitize \t TRT",
+            "contents": "- REQUIRED: In Customizer, I am only seeing two sanitize_callback. Each settings needs proper sanitization function. Please check thoroughly."
+        },
+
+        // Language File.
+        {
+            "trigger": "Language File \t TRT",
+            "contents": "- REQUIRED: Update your POT file according to your theme. Or you can remove whole languages folder if you want to take advantage of WordPress Language Pack."
+        },
+
+        // Plugin Teritory.
+        {
+            "trigger": "Plugin Territory \t TRT",
+            "contents": "- REQUIRED: Remove features which are considered plugin territory. See [https://make.wordpress.org/themes/handbook/review/required/explanations-and-examples/#plugin-territory Plugin Territory] Eg, Remove Google map."
+        },
+
+        // Multiple Author Tickets.
+        {
+            "trigger": "Author Multiple Tickets \t TRT",
+            "contents": "Sorry but I have closed this ticket because an author is only allowed one open ticket in the system at a time."
+        },
+
+        // Settings Page
+        {
+            "trigger": "Settings Page \t TRT",
+            "contents": "Sorry but I have closed this ticket because settings api not allowed you need to use customizer settings api for theme customization."
+        },
+
+        // Multiauthor
+        {
+            "trigger": "Multiauthor Class Missing \t TRT",
+            "contents": "- Recommended: Missing bogy class `group-blog` which is used for multiauthor."
+        },
+
+        // Closing Ticket
+        {
+            "trigger": "Closing Ticket \t TRT",
+            "contents": "Closing ticket. A theme does not fulfill the [https://make.wordpress.org/themes/handbook/review/required/ theme required] section.\n\nPlease check your theme with [https://wordpress.org/plugins/theme-check/ Theme Check] and [https://github.com/WPTRT/theme-sniffer/releases/download/0.1.4/ns-theme-check.0.1.4.zip Theme Sniffer]).\n\n-----\n\n**REQUIRED**\n\n- REQUIRED: \n\n"
+        },
+
+        // Screenshot.
+        {
+            "trigger": "Screenshot Invalid\t TRT",
+            "contents": "Hi ${1:author},\n\nYou need to provide the screenshot.png which is the initial preview of your theme after theme active. @see [https://make.wordpress.org/themes/handbook/review/required/#screenshot Screenshot Guidelines]\n\n'''NOTE: THIS IS NOT A THEME REVIEW.'''"
+        },{
+            "trigger": "Screenshot Size \t TRT",
+            "contents": "- REQUIRED: Screenshot dimensions are wrong! Ratio of width to height should be 4:3. Screenshot size should be 1200x900, to account for HiDPI displays. Any 4:3 image size is acceptable, but 1200x900 is preferred."
+        },
+
+        // Review Response Boilerplate.
+        {
+            "trigger": "Review Boilerplate \t TRT",
+            "contents": "Hi ${1:author},\nPlease check below complete theme review.\n\n-----\n\n== # Customizer\n- ${2:Pass/Fail}\n\n== # Files Review (Manual)\n**REQUIRED**\n${3:List Here}\n\n**RECOMMENDED**\n${4:List Here}\n\n== # Plugin - NS Theme Check\n- ${5:Pass/Fail}\n\n== # Theme Unit Test Data\n- ${6:Pass/Fail}\n\n== # Plugin - Theme Check\n- ${7:Pass/Fail}\n\n== # WP Debug Log\n- ${8:Pass/Fail}\n\n-----\n\n${9:Note: You need to fix the listed issues within 7 days.}"
+        }
+    ]
+}
