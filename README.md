@@ -1,1 +1,1 @@
-# wp-theme-review-responses
+# WordPress Theme Review Canned Responses
