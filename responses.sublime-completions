@@ -7,6 +7,9 @@
             "contents": "https://themes.trac.wordpress.org/changeset?old_path=${1:bhari/1.0.4}&new_path=${:2astra/1.0.4}"
         },
         {
+            "trigger": "Pingback \t TRT",
+            "contents": "- RECOMMENDED: `pingback` should be conditional. Eg. \n{{{\n\tif ( is_singular() && pings_open() ) {\n\t\tprintf( '<link rel=\"pingback\" href=\"%s\">' . \"\\n\", esc_url( get_bloginfo( 'pingback_url' ) ) );\n\t}\n}}}."
+        },{
             "trigger": "Theme URL/URI \t TRT",
             "contents": "- REQUIRED: Theme URL is invalid. @see [https://make.wordpress.org/themes/handbook/review/required/#selling-credits-and-links Selling Credits and Links]."
         },{
@@ -43,11 +46,17 @@
             "trigger": "Commented Code \t TRT",
             "contents": "- REQUIRED: Remove commented and unused code."
         },{
-            "trigger": "Hard-coded/Hotlink Scripts \t TRT",
+            "trigger": "Hard-coded scripts & styles code \t TRT",
+            "contents": "- REQUIRED: Do not include scripts/styles hard-coded. Use `wp_add_inline_script()` and `wp_add_inline_style()`"
+        },{
+            "trigger": "Hard-coded links \t TRT",
             "contents": "- REQUIRED: Do not include scripts/styles hard-coded use [https://developer.wordpress.org/reference/functions/wp_enqueue_scripts/ wp_enqueue_scripts()]. The exception to this is Google Fonts."
         },{
             "trigger": "Date Translation \t TRT",
             "contents": "- REQUIRED: Change date('Y') to date_i18n(__('Y','textdomain'))."
+        },{
+            "trigger": "Translation \t TRT",
+            "contents": "- REQUIRED: Missing translation ready strings. Check [https://developer.wordpress.org/themes/functionality/internationalization/ internationalization]"
         },{
             "trigger": "Editor File \t TRT",
             "contents": "- REQUIRED: Please implement add_editor_style() properly. [https://developer.wordpress.org/reference/functions/add_editor_style/ add_editor_style()]. If you don't want to implement, Please remove it."
@@ -69,6 +78,9 @@
         },{
             "trigger": "Existing Scripts \t TRT",
             "contents": "- REQUIRED: Masonry library is already available in core. Please remove it from theme and use that instead. See [https://developer.wordpress.org/reference/functions/wp_enqueue_script/ wp_enqueue_script()]."
+        },{
+            "trigger": "Remove Development Files \t TRT",
+            "contents": "- RECOMMENDED: You have development file which need to remove from the theme. E.g. 'less', 'scss', 'package.json' etc."
         },{
             "trigger": "Minification \t TRT",
             "contents": "- REQUIRED: No minified files unless unminified version is also provided. Eg, If you are using bootstrap.min.css then you should also keep bootstrap.css."
@@ -113,7 +125,7 @@
         // Multiauthor
         {
             "trigger": "Multiauthor Class Missing \t TRT",
-            "contents": "- Recommended: Missing bogy class `group-blog` which is used for multiauthor."
+            "contents": "- Recommended: Missing body class `group-blog` which is used for multiauthor."
         },
 
         // Closing Ticket
