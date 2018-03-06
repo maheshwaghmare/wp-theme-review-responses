@@ -7,6 +7,18 @@
             "contents": "https://themes.trac.wordpress.org/changeset?old_path=${1:bhari/1.0.4}&new_path=${:2astra/1.0.4}"
         },
         {
+            "trigger": "Social Shares  \t TRT",
+            "contents": "- REQUIRED: Social media 'like', 'follow' and 'share' buttons are plugin territory. @see [https://make.wordpress.org/themes/handbook/review/how-to-do-a-review-draft/#plugin-territory-and-non-design-related-functionality plugin territory]."
+        },
+        {
+            "trigger": "Theme Review Note \t TRT",
+            "contents": "'''NOTE: THIS IS NOT A THEME REVIEW.\nYour theme will be reviewed once it reaches the top of the [https://themes.trac.wordpress.org/report/2 theme review queue]. It'll take up to 2/3 months.]'''"
+        },
+        {
+            "trigger": "Favicon Support \t TRT",
+            "contents": "- REQUIRED: Remove favicon support from the theme. WordPress manage it in the core."
+        },
+        {
             "trigger": "Pingback \t TRT",
             "contents": "- RECOMMENDED: `pingback` should be conditional. Eg. \n{{{\n\tif ( is_singular() && pings_open() ) {\n\t\tprintf( '<link rel=\"pingback\" href=\"%s\">' . \"\\n\", esc_url( get_bloginfo( 'pingback_url' ) ) );\n\t}\n}}}."
         },{
