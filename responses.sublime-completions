@@ -3,8 +3,12 @@
     "comment": "Theme Review Responses.",
     "completions": [
         {
+            "trigger": "Theme Upload \t TRT",
+            "contents": "Goto [https://wordpress.org/themes/upload/ upload a theme] and upload your updated theme zip."
+        },
+        {
             "trigger": "Two Theme Diff \t TRT",
-            "contents": "https://themes.trac.wordpress.org/changeset?old_path=${1:bhari/1.0.4}&new_path=${:2astra/1.0.4}"
+            "contents": "https://themes.trac.wordpress.org/changeset?old_path=${1:bhari/1.0.4}&new_path=${2:astra/1.0.4}"
         },
         {
             "trigger": "Social Shares  \t TRT",
